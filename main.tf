@@ -12,6 +12,20 @@ module "infrastructure_github_manager" {
   github_owner = var.github_owner
 }
 
+module "infrastructure_aws_manager" {
+  source = "./modules/repository"
+
+  name               = "infrastructure-aws-manager"
+  description        = "Infrastructure-as-Code for managing AWS resources with Terraform"
+  visibility         = "public"
+  license_template   = "mit"
+  gitignore_template = "Terraform"
+  topics             = ["aws", "terraform", "infrastructure-as-code"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}
+
 module "network_traffic_analyzer" {
   source = "./modules/repository"
 
