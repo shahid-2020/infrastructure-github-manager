@@ -25,3 +25,16 @@ module "network_traffic_analyzer" {
   github_token = var.github_token
   github_owner = var.github_owner
 }
+
+module "shahid_2020" {
+  source = "./modules/repository"
+
+  name             = "shahid-2020"
+  description      = "GitHub repository for profile"
+  visibility       = "public"
+  license_template = "mit"
+  topics           = ["profile"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}
