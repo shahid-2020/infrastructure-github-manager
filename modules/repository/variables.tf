@@ -28,6 +28,7 @@ variable "license_template" {
 variable "gitignore_template" {
   description = "Gitignore template"
   type        = string
+  default     = null
 }
 
 variable "require_last_push_approval" {
