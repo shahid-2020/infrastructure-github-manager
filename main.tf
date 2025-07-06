@@ -11,3 +11,17 @@ module "infrastructure_github_manager" {
   github_token = var.github_token
   github_owner = var.github_owner
 }
+
+module "network_traffic_analyzer" {
+  source = "./modules/repository"
+
+  name               = "network-traffic-analyzer"
+  description        = "Network Traffic Analyzer using C"
+  visibility         = "public"
+  license_template   = "mit"
+  gitignore_template = "C"
+  topics             = ["c", "networking"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}

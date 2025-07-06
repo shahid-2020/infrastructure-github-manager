@@ -1,6 +1,6 @@
 # Github Manager
 
-This repository is my Terraform setup for managing all GitHub-related configuration as **Infrastructure as Code (IaC)**.
+This repository is a Terraform setup for managing all GitHub-related configuration as **Infrastructure as Code (IaC)**.
 
 Everything is defined in code so it’s consistent, repeatable, and version-controlled.
 
