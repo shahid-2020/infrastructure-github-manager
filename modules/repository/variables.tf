@@ -30,6 +30,18 @@ variable "gitignore_template" {
   type        = string
 }
 
+variable "require_last_push_approval" {
+  description = "Require approval for the most recent push to a PR"
+  type        = bool
+  default     = false
+}
+
+variable "required_approving_review_count" {
+  description = "Number of required approving reviews"
+  type        = number
+  default     = 0
+}
+
 variable "github_owner" {
   description = "GitHub owner (username or organization)"
   type        = string

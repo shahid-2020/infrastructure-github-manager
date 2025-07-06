@@ -53,13 +53,13 @@ resource "github_branch_protection" "main_branch_protection" {
   }
 
   required_pull_request_reviews {
-    require_last_push_approval      = true
+    require_last_push_approval      = var.require_last_push_approval
     dismiss_stale_reviews           = true
     require_code_owner_reviews      = false
-    required_approving_review_count = 1
+    required_approving_review_count = var.required_approving_review_count
   }
 
-  lock_branch = true
+  lock_branch = false
 }
 
 resource "github_actions_repository_permissions" "actions_repository_permissions" {
