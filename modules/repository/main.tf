@@ -72,9 +72,3 @@ resource "github_actions_repository_permissions" "actions_repository_permissions
     patterns_allowed     = []
   }
 }
-
-resource "github_repository_environment" "production_environment" {
-  repository  = github_repository.repository.name
-  environment = "production"
-  wait_timer  = 0
-}
