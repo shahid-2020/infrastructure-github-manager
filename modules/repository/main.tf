@@ -46,7 +46,6 @@ resource "github_branch_protection" "main_branch_protection" {
   allows_force_pushes = false
 
   require_conversation_resolution = true
-
   required_status_checks {
     strict = true
     # contexts = ["ci/test", "ci/lint"]
@@ -70,5 +69,17 @@ resource "github_actions_repository_permissions" "actions_repository_permissions
     github_owned_allowed = true
     verified_allowed     = true
     patterns_allowed     = []
+  }
+}
+
+resource "github_repository_environment" "repository_environment" {
+  count       = length(var.environments)
+  environment = var.environments[count.index]
+
+  repository = github_repository.repository.name
+
+  deployment_branch_policy {
+    protected_branches     = var.environments[count.index] == "production"
+    custom_branch_policies = var.environments[count.index] != "production"
   }
 }

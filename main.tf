@@ -52,3 +52,31 @@ module "shahid_2020" {
   github_token = var.github_token
   github_owner = var.github_owner
 }
+
+module "ims_fe" {
+  source = "./modules/repository"
+
+  name        = "ims-fe"
+  description = "IMS Frontend"
+  visibility  = "public"
+  topics      = ["frontend", "terraform", "javascript", "typescript", "react"]
+
+  environments = ["production", "staging"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}
+
+module "ims_be" {
+  source = "./modules/repository"
+
+  name        = "ims-be"
+  description = "IMS Backend"
+  visibility  = "public"
+  topics      = ["backend", "terraform", "python", "aws", "serverless"]
+
+  environments = ["production", "staging"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}
