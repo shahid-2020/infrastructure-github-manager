@@ -11,7 +11,7 @@ on:
         default: 'main'
 jobs:
   terraform:
-    name: Terraform Format & Validate
+    name: Terraform Format Check & Validate
     runs-on: ubuntu-latest
 
     steps:
