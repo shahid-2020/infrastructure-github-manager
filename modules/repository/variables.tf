@@ -23,6 +23,7 @@ variable "topics" {
 variable "license_template" {
   description = "License template"
   type        = string
+  default     = ""
 }
 
 variable "gitignore_template" {
@@ -41,6 +42,12 @@ variable "required_approving_review_count" {
   description = "Number of required approving reviews"
   type        = number
   default     = 0
+}
+
+variable "environments" {
+  description = "Environment for the repository (e.g., production, staging)"
+  type        = list(string)
+  default     = []
 }
 
 variable "github_owner" {
