@@ -48,7 +48,6 @@ resource "github_branch_protection" "main_branch_protection" {
   require_conversation_resolution = true
   required_status_checks {
     strict = true
-    # contexts = ["ci/test", "ci/lint"]
   }
 
   required_pull_request_reviews {
