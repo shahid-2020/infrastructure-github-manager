@@ -53,13 +53,43 @@ module "shahid_2020" {
   github_owner = var.github_owner
 }
 
-module "trading_indicators" {
+module "techind" {
   source = "./modules/repository"
 
-  name        = "tradingindicators"
-  description = "A collection of trading indicators implemented in Go"
-  visibility  = "public"
-  topics      = ["go", "trading", "indicators"]
+  name               = "techind"
+  description        = "Comprehensive technical indicators library for Go - Moving Averages, Oscillators, Momentum, Volatility, and more"
+  visibility         = "public"
+  license_template   = "mit"
+  gitignore_template = "Go"
+  topics             = ["go", "trading-indicators", "technical-analysis", "algorithmic-trading", "quantitative-finance", "financial-analysis", "trading-bot", "backtesting"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}
+
+module "gohlcv" {
+  source = "./modules/repository"
+
+  name               = "gohlcv"
+  description        = "Go library for OHLCV (Open, High, Low, Close, Volume) market data from multiple providers"
+  visibility         = "public"
+  license_template   = "mit"
+  gitignore_template = "Go"
+  topics             = ["go", "market-data", "ohlcv"]
+
+  github_token = var.github_token
+  github_owner = var.github_owner
+}
+
+module "trading_server" {
+  source = "./modules/repository"
+
+  name               = "trading-server"
+  description        = "High-performance trading server with real-time market data, order execution, and strategy management"
+  visibility         = "public"
+  license_template   = "mit"
+  gitignore_template = "Go"
+  topics             = ["trading-server", "algorithmic-trading"]
 
   github_token = var.github_token
   github_owner = var.github_owner
