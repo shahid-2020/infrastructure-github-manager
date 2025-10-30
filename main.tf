@@ -81,15 +81,15 @@ module "gohlcv" {
   github_owner = var.github_owner
 }
 
-module "trading_server" {
+module "authentication_server" {
   source = "./modules/repository"
 
-  name               = "trading-server"
-  description        = "High-performance trading server with real-time market data, order execution, and strategy management"
+  name               = "authentication-server"
+  description        = "Node.js authentication server"
   visibility         = "public"
   license_template   = "mit"
-  gitignore_template = "Go"
-  topics             = ["trading-server", "algorithmic-trading"]
+  gitignore_template = "Node"
+  topics             = ["javascript", "typescript", "nodejs"]
 
   github_token = var.github_token
   github_owner = var.github_owner
